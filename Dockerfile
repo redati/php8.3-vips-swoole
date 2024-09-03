@@ -28,9 +28,9 @@ RUN docker-php-ext-install gd soap pdo_mysql opcache mbstring \
         mysqli gettext calendar bz2 exif gettext \
         sockets sysvmsg sysvsem sysvshm xsl zip xml intl bcmath ffi pcntl
 
-RUN pecl channel-update pecl.php.net &&  echo yes | pecl install vips redis swoole zstd lzf mongodb
+RUN pecl channel-update pecl.php.net &&  echo yes | pecl install vips igbinary redis swoole zstd lzf mongodb
 
-RUN docker-php-ext-enable redis lzf zstd vips swoole mongodb
+RUN docker-php-ext-enable igbinary redis lzf zstd vips swoole mongodb
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
