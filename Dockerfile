@@ -3,7 +3,7 @@
 FROM php:8.3.11
 
 LABEL maintainer="Misael Gomes"
-LABEL description="PHP8.3 VIPS Swoole, mongodb, redis, imagem base para criação de outros containers"
+LABEL description="PHP8.3 VIPS Swoole, mongodb, redis, cron, imagem base para criação de outros containers"
 
 ARG WWWGROUP
 
