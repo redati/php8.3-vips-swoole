@@ -32,3 +32,8 @@ RUN pecl channel-update pecl.php.net &&  echo yes | pecl install vips redis swoo
 
 RUN docker-php-ext-enable redis lzf zstd vips swoole mongodb
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+RUN apt-get -y autoremove && apt-get clean 
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
