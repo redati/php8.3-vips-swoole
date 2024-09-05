@@ -24,6 +24,8 @@ RUN apt-get install -y curl ca-certificates zip unzip git supervisor \
 
 RUN apt-get install -y libcurl4-openssl-dev pkg-config libssl-dev
 
+RUN apt-get install -y libsnappy-dev libzstd-dev
+
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp
 
 RUN docker-php-ext-install gd soap pdo_mysql opcache mbstring \
