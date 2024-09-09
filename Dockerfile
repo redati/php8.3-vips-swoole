@@ -39,5 +39,7 @@ RUN docker-php-ext-enable igbinary redis lzf zstd vips swoole mongodb
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
+RUN apt-get install -y nano
+
 RUN apt-get -y autoremove && apt-get clean 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
